@@ -235,6 +235,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Jean-Pierre Distler";
+				TargetAttributes = {
+					8FB68A3E16B9ACCA00979E63 = {
+						DevelopmentTeam = 47J734W9F8;
+					};
+				};
 			};
 			buildConfigurationList = 8FB68A3A16B9ACCA00979E63 /* Build configuration list for PBXProject "Around Me" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -404,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1700336049E3BDD8A4C0080E /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Around Me/Around Me-Prefix.pch";
 				INFOPLIST_FILE = "Around Me/Around Me-Info.plist";
@@ -416,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ABCDA3F4F7FA8BB1EA921396 /* Pods.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Around Me/Around Me-Prefix.pch";
 				INFOPLIST_FILE = "Around Me/Around Me-Info.plist";

@@ -50,9 +50,11 @@ NSString * const apiKey = @"AIzaSyB74B4SOzENuFJGFA_P_xhHTawlQ6iBpRM";
     CLLocationDegrees latitude = [location coordinate].latitude;
     CLLocationDegrees longitude = [location coordinate].longitude;
     
+
+    
     //3
     NSMutableString *uri = [NSMutableString stringWithString:apiURL];
-    [uri appendFormat:@"nearbysearch/json?location=%f,%f&radius=%d&sensor=true&types=universtiy|lodging|stadium|restaurant&key=%@", latitude, longitude, radius, apiKey];
+    [uri appendFormat:@"nearbysearch/json?location=%f,%f&radius=%d&sensor=true&types=university|stadium&key=%@", latitude, longitude, radius, apiKey];
     //finding multiple types does not seem to be working
     //cuts out/eliminates certain points
     //start importing type and save to place object
