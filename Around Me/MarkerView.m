@@ -64,18 +64,17 @@ const float kHeight = 100.0f;
         [title addSubview:iconView];
         
         //4
-        _lblDistance = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 45.0f, kWidth, 40.0f)];
+        _lblDistance = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 45.0f,kWidth,  40.0f)];
         [_lblDistance setBackgroundColor:[UIColor colorWithWhite:0.3f alpha:0.7f]];
         [_lblDistance setTextColor:[UIColor whiteColor]];
         [_lblDistance setTextAlignment:NSTextAlignmentCenter];
-        float mi = [coordinate distanceFromOrigin] * .621371;
-        [_lblDistance setText:[NSString stringWithFormat:@"%.2f mi", mi]];
+        float mi = [coordinate distanceFromOrigin]/1000.0f * .621371;
+        [_lblDistance setText:[NSString stringWithFormat:@"  %.2f mi  ", mi]];
         [_lblDistance sizeToFit];
         
         //5
         [self addSubview:title];
         [self addSubview:_lblDistance];
-        
         [self setBackgroundColor:[UIColor clearColor]];
     }
     
@@ -97,7 +96,9 @@ const float kHeight = 100.0f;
 
 - (void)drawRect:(CGRect)rect { //displays name and distance from marker
     [super drawRect:rect];
-    [[self lblDistance] setText:[NSString stringWithFormat:@"%.2f km", [[self coordinate] distanceFromOrigin] / 1000.0f]];
+    float km = [[self coordinate] distanceFromOrigin] / 1000.0f;
+    float mi = km * .621371f;
+    [[self lblDistance] setText:[NSString stringWithFormat:@"%.2f mi", mi]];
 }
 
 @end
