@@ -52,7 +52,7 @@ const float kHeight = 100.0f;
             icon = [FAKFontAwesome universityIconWithSize:20];
         }else if([type isEqualToString:@"lodging"]){
             icon = [FAKFontAwesome homeIconWithSize:20];
-        }else if([type isEqualToString:@"restaurant"]){
+        }else if([type isEqualToString:@"restaurant"] || [type isEqualToString:@"food"]){
             icon = [FAKFontAwesome cutleryIconWithSize:20];
         }else if([type isEqualToString:@"stadium"]){
             icon = [FAKFontAwesome trophyIconWithSize:20];
@@ -68,7 +68,8 @@ const float kHeight = 100.0f;
         [_lblDistance setBackgroundColor:[UIColor colorWithWhite:0.3f alpha:0.7f]];
         [_lblDistance setTextColor:[UIColor whiteColor]];
         [_lblDistance setTextAlignment:NSTextAlignmentCenter];
-        [_lblDistance setText:[NSString stringWithFormat:@"%.2f km", [coordinate distanceFromOrigin] / 1000.0f]];
+        float mi = [coordinate distanceFromOrigin] * .621371;
+        [_lblDistance setText:[NSString stringWithFormat:@"%.2f mi", mi]];
         [_lblDistance sizeToFit];
         
         //5
