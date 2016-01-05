@@ -40,6 +40,17 @@ NSArray * const kType = @"types";
     
     [_locationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
     [_locationManager startUpdatingLocation];
+    
+    
+                        //range slider set up
+    _rangeSlider.maximumValue = 2000;
+    _rangeSlider.minimumValue=0;
+    _rangeSlider.continuous = YES;
+    _rangeSlider.value = 1000;
+    range = _rangeSlider.value;   //mi conversion
+    float range_mi = _rangeSlider.value/1000 * 0.621371f;
+    _rangeCounter.text = [NSString stringWithFormat:@"%.2f", range_mi];
+    [_rangeCounter sizeToFit];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,8 +93,7 @@ NSArray * const kType = @"types";
         [_mapView setRegion:region animated:YES];
         
         // More code here
-        //for(int i=0; i<[poiTypeArray count]; i++){
-        [[PlacesLoader sharedInstance] loadPOIsForLocation:[locations lastObject] radius:1000 successHandler:^(NSDictionary *response) {
+        [[PlacesLoader sharedInstance] loadPOIsForLocation:[locations lastObject] radius:_rangeSlider.value successHandler:^(NSDictionary *response) {
             NSLog(@"Response: %@", response);
             //1
             if([[response objectForKey:@"status"] isEqualToString:@"OK"]) {
@@ -117,10 +127,28 @@ NSArray * const kType = @"types";
             NSLog(@"Error: %@", error);
         }];
         //end of for loop
-        //}
         
         [manager stopUpdatingLocation];
     }
 }
 
+- (IBAction)sliderAction:(id)sender {
+    NSLog(@"updated");
+    range = _rangeSlider.value;   //mi conversion
+    float range_mi = _rangeSlider.value/1000 * 0.621371f;
+    _rangeCounter.text = [NSString stringWithFormat:@"%.2f", range_mi];
+    [_rangeCounter sizeToFit];
+    
+    [_mapView removeAnnotations:_mapView.annotations];  //get rid of all pins
+    
+    
+    [self setLocationManager:[[CLLocationManager alloc] init]];
+    [_locationManager setDelegate:self];
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [_locationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
+    [_locationManager startUpdatingLocation];
+
+}
 @end

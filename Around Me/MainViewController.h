@@ -12,9 +12,12 @@
 #import "PlacesLoader.h"
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate,CLLocationManagerDelegate, MKMapViewDelegate>{
-    
+    float range;
 }
 //@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 //@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UILabel *rangeCounter;
+@property (weak, nonatomic) IBOutlet UISlider *rangeSlider;
+- (IBAction)sliderAction:(id)sender;
 
 @end
