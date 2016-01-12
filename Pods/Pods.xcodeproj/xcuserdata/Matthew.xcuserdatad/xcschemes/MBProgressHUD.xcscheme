@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "49397510FE06CFE1666D00B2"
-               BuildableName = "libFontAwesomeKit.a"
-               BlueprintName = "FontAwesomeKit"
+               BlueprintIdentifier = "1C25B9269D5572A00141F7CF"
+               BuildableName = "libMBProgressHUD.a"
+               BlueprintName = "MBProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

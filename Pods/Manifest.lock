@@ -14,11 +14,14 @@ PODS:
     - FontAwesomeKit/Core
   - FontAwesomeKit/Zocial (2.2.0):
     - FontAwesomeKit/Core
+  - MBProgressHUD (0.9.2)
 
 DEPENDENCIES:
   - FontAwesomeKit
+  - MBProgressHUD (~> 0.8)
 
 SPEC CHECKSUMS:
   FontAwesomeKit: 025fd4dd1017fe4e3f8d47b03e024deedbb33cd4
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
 
 COCOAPODS: 0.38.2

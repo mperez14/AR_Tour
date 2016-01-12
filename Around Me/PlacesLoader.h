@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Place.h"
-
+#import "MainViewController.h"
+NSString *type;
 //1
 @class CLLocation;
 @class Place;

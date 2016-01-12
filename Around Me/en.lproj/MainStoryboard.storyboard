@@ -56,6 +56,13 @@
                                     <action selector="sliderAction:" destination="2" eventType="valueChanged" id="TYS-Oq-PZg"/>
                                 </connections>
                             </slider>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZL-r0-KxO">
+                                <rect key="frame" x="36" y="452" width="146" height="96"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="n3h-Qw-NuN"/>
+                                    <outlet property="delegate" destination="2" id="Jy9-R3-BDb"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -68,6 +75,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="POIPicker" destination="bZL-r0-KxO" id="I4x-tn-iGo"/>
                         <outlet property="mapView" destination="wEe-tx-uwl" id="oKx-yf-kDd"/>
                         <outlet property="rangeCounter" destination="AHZ-dW-Mhi" id="Ywr-4S-66h"/>
                         <outlet property="rangeSlider" destination="aMd-e7-Ko3" id="6ZO-J0-Vbn"/>
